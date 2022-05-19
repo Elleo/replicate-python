@@ -3,6 +3,7 @@
 from setuptools import setup
 
 from pathlib import Path
+from replicate.package_version import __version__
 
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
@@ -11,7 +12,7 @@ long_description = (this_directory / "README.md").read_text()
 setup(
     name="replicate",
     packages=["replicate"],
-    version="0.0.1a7",
+    version=__version__,
     description="Python client for Replicate",
     long_description=long_description,
     long_description_content_type="text/markdown",
