@@ -2,10 +2,11 @@ import os
 import requests
 
 from replicate.model import ModelCollection
-from replicate.package_version import __version__
 from replicate.prediction import PredictionCollection
 from replicate.version import VersionCollection
 
+package_version = None
+exec(open('replicate/package_version.py').read())
 
 class Client:
     def __init__(self, api_token=None) -> None:
@@ -33,7 +34,7 @@ class Client:
     def _headers(self):
         return {
             "Authorization": f"Token {self._api_token()}", 
-            "User-Agent": f"replicate-python@{__version__}",
+            "User-Agent": f"replicate-python@{package_version}",
         }
 
     def _api_token(self):

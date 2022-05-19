@@ -105,7 +105,7 @@ This project has a [GitHub Actions workflow](https://github.com/replicate/replic
 First, set the version number in [replicate/package_version.py](replicate/package_version.py) and commit it to the `main` branch:
 
 ```
-__version__ = "0.0.1a7"
+package_version = "0.0.1a7"
 ```
 
 Then run the following in your local checkout:
